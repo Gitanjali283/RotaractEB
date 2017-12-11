@@ -23,7 +23,7 @@ $relevance=$_REQUEST['relevance'];
 $len_nom=sizeof($_REQUEST['nomination']['category_list']);
 $category="";
 for($i=0;$i<$len_nom;$i++){
-    $category=$category+$_REQUEST['nomination']['category_list'][$i]+",";
+    $category=$category.$_REQUEST['nomination']['category_list'][$i].",";
 }
 $prefs=$_REQUEST['nomination']['preference'];
 $query="INSERT INTO `Executive_Board`(`firstname`, `lastname`, `email`, `phonenumber`, `institutionworkplace`, `age`, `city`, `country`, `linkedin`, `delegateexperience`, `delegateexperienceeb`, `achivements`, `ebexperience`, `category_list`, `preference`, `why`, `agendas`, `relevance`) VALUES ('$firstname','$lastname','$email','$phnum','$insti','$age','$city','$country','$linkedin','$delegate_exp','$del_exp_eb','$achvmnt','$eb_exp','$category','$prefs','$why','$agenda','$relevance')";
